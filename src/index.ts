@@ -1,37 +1,32 @@
-const nameSyllables = ['akt', 'hel', 'thel', 'oss', 'fen'];
-const maxSyllables = 3;
+import { BaseGenerator } from './base/base';
+import { ElfGenerator } from './elf/elf';
+import { HumanGenerator } from './human/human';
 
-class NameGenerator { 
- 
-  public static createNames(): Array<String> {
-    let randomNames = 10;
-    let nameList:Array<String> = [];
-    while (randomNames > 0) {
-      let currentName = NameGenerator.createName();
-      if (!nameList.includes(currentName)) {
-        nameList.push(currentName);
-        randomNames--;
-      }
+export class GeneratorMain {
+  static run(): void {
+    let culture: string = process.argv[2];
+    let namesDesired: number = Number(process.argv[3]);
+    if (!culture || !namesDesired) {
+      console.error("Please provide both the desired culture and number of names");
+      return;
     }
-    nameList.sort();
-    return nameList;
+    console.log(GeneratorMain.generateNames(culture, namesDesired));
   }
 
-  public static createName(): String {
-    let fullName = "";
-    let nameSize = NameGenerator.getRandomInteger(1, maxSyllables+1);
-    for (let i = 0; i < nameSize; i++) {
-      let syllableIdx = NameGenerator.getRandomInteger(0, nameSyllables.length);
-      fullName = `${fullName}${nameSyllables[syllableIdx]}`;
+  static generateNames(culture: string, namesDesired: number): Array<string> {
+    let nameGenerator: BaseGenerator;
+    switch (culture) {
+      case "elf":
+        nameGenerator = new ElfGenerator();
+        break;
+      case "human":
+        nameGenerator = new HumanGenerator();
+        break;
+      default:
+        throw new Error("Culture not found!");
     }
-    return fullName;
-  }
-
-  private static getRandomInteger(min:number, max:number): number {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max-min)) + min;
+    return nameGenerator.createNames(namesDesired);
   }
 }
 
-console.log(NameGenerator.createNames());
+GeneratorMain.run();
