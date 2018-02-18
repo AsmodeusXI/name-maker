@@ -1,6 +1,7 @@
 import { BaseGenerator } from './base/base';
 import { ElfGenerator } from './elf/elf';
 import { HumanGenerator } from './human/human';
+import { TieflingGenerator } from './tiefling/tiefling';
 
 export class GeneratorMain {
   static run(): void {
@@ -21,6 +22,9 @@ export class GeneratorMain {
         break;
       case "human":
         nameGenerator = new HumanGenerator();
+        break;
+      case "tiefling":
+        nameGenerator = new TieflingGenerator();
         break;
       default:
         throw new Error("Culture not found!");

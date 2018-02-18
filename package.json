@@ -6,14 +6,13 @@
   "types": "dist/index",
   "scripts": {
     "prebuild": "rm -rf ./dist && mkdir dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
   "keywords": [
     "dnd5e"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "faucet": "0.0.1",
     "lodash": "^4.17.4",
