@@ -1,6 +1,6 @@
 {
   "name": "name-maker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Randomly generates various names for Iris.",
   "main": "dist/index",
   "types": "dist/index",
