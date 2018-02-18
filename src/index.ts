@@ -32,5 +32,3 @@ export class GeneratorMain {
     return nameGenerator.createNames(namesDesired);
   }
 }
-
-GeneratorMain.run();
