@@ -6,7 +6,8 @@
   "types": "dist/index",
   "scripts": {
     "prebuild": "rm -rf ./dist && mkdir dist",
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "npm run build && cp ./package.json ./dist/package.json"
   },
   "keywords": [
     "dnd5e"

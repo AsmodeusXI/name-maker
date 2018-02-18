@@ -6,8 +6,9 @@ install:
 - npm install
 before_script:
 - echo -e "Host $HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-script:
-- npm run build
+script: npm run publish
+before_deploy:
+  - cd dist
 deploy:
   skip_cleanup: true
   provider: npm
