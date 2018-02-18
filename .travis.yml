@@ -12,6 +12,7 @@ deploy:
   skip_cleanup: true
   provider: npm
   email: asmodeusxi@gmail.com
-  api_key: $NPM_TOKEN
   on:
     branch: master
+  api_key:
+    secure: xvBi0srLVY3BXvSJU5YwpkBg6B3QCEgnuRze8GkMiF3K7z5EHtby4BGGfy2a+G12c7yCLhgIjTzL+/yxvF3+B6zqvfr9ijPUNj1YXPb4QJxfN93Uuja5r4OIxg8GZ4+N693CgSfG93Nn+U7Ds4NS6IYtt8Hv5NHUf8Tt82o7fT+JQ5+u5b97WrjUSQ/B4WBD+gcGTXkgAAOXw3B+1UBLSob8Tc/hbrLIpyifq0NFTaXIo9UXHNxtXHNK6UinfqeWOANQ6OKZ93EvW4/+TmScOYEo+q0P9WU81zIydeYteiXaBRMlFpMBp6ax/ovmyA8ocMG8qgCb3c+FMpeXO0a97+dqcD9x0WMAfUk2TnCyRBt9xUnFRzBHvi4tCJGvu5xh1WUlG5yGz8+zjGBVr6TAiSwHl/Fy2tbsttuqM2dzO00qOM08UHq+t7HBnVJnfdwxbZq1w38L1Bbtf/WCcbg4pMrSbfwAwXhDuwYsMJHwjHFrpbFLwfl0diJZ+wwgMQKSmmFE/VCs1hrKi1npBgBOPcGU9AJDAbAADh688aQlfYdj+I1uzBELaUy06QAgzH6cPAXA57K3EFcFvqU1tFh9vZKMkBV+2DnjC4diIKcmDTCoeuZa40HWgN/YowruKNJUlLSloXrovyBkh9/DURpJOhNQlCEUQbwkeC2UeX4rcVc=
