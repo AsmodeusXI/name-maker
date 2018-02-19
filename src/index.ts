@@ -31,4 +31,8 @@ export class GeneratorMain {
     }
     return nameGenerator.createNames(namesDesired);
   }
+
+  static getAvailableCultures(): Array<string> {
+    return ['elf', 'human'];
+  }
 }
