@@ -7,12 +7,12 @@
   "scripts": {
     "prebuild": "rm -rf ./dist && mkdir dist",
     "build": "tsc",
-    "publish": "npm run build && cp ./package.json ./dist/package.json"
+    "publish": "npm run build && rm ./dist/test.js && cp ./package.json ./dist/package.json"
   },
   "keywords": [
     "dnd5e"
   ],
-  "author": "",
+  "author": "asmodeusxi",
   "license": "MIT",
   "dependencies": {
     "faucet": "0.0.1",

@@ -2,13 +2,16 @@ export abstract class BaseGenerator {
   abstract composeName(): string;
 
   public createNames(namesRequired: number): Array<string> {
-    let nameList: Array<string> = [];
-    while (namesRequired > 0) {
-      let name = this.composeName();
+		let nameList: Array<string> = [];
+		let attempts = 0;
+		while (namesRequired > 0 && attempts < 5) {
+			let name = this.composeName();
       if (!nameList.includes(name)) {
         nameList.push(name);
         namesRequired--;
-      }
+			} else {
+				attempts++;
+			}
     }
     nameList.sort();
     return nameList;
