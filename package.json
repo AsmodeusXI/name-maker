@@ -7,7 +7,7 @@
   "scripts": {
     "prebuild": "rm -rf ./dist && mkdir dist",
     "build": "tsc",
-    "publish": "npm run build && rm ./dist/test.js && cp ./package.json ./dist/package.json"
+    "compile": "npm run build && rm ./dist/test.js && cp ./package.json ./dist/package.json"
   },
   "keywords": [
     "dnd5e"
